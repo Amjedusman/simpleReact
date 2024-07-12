@@ -1,3 +1,11 @@
 .hello{
     background-color: aqua;
 }
+
+.jjj{
+    color: blueviolet;
+}
+table, th, td, tr {
+    border: 1px solid black;
+  }
+  
