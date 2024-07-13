@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Counter from './components/Counter';
 import Header from './components/Header';
@@ -29,6 +29,15 @@ function App() {
     setCount(count + 1);
     console.log(count);
   };
+
+  useEffect(()=>{
+    console.log('Mounting....');
+    return ()=>{
+      console.log();
+    }
+  })
+
+  const [state,setState]= useState(false);
 
   return (
     <div>
@@ -62,6 +71,9 @@ function App() {
           }
         </tbody>
       </table>
+
+      <h3 onClick={()=>{setState(!state)}}>Click me to show/hide</h3>
+      {state ? <Counter {...obj}/>:null}
       
     </div>
   );
